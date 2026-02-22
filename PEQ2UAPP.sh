@@ -26,15 +26,15 @@ sleep 3
 # Ambil semua file .txt
 for file in *.txt; do
   if [ ! -f "$file" ]; then
-    echo "⛔ File ParametricEQ tidak ditemukan!"
+    echo "⛔ File ParametricEQ not found!"
     break
   fi
-  echo "ℹ️ Memproses: $file"
+  echo "ℹ️ Processing: $file"
     sleep 1
   mapfile -t lines < "$file"
 
   if [[ ! ${lines[0]} == Preamp* ]]; then
-    echo "⛔ Bukan ParametricEQ: $file"
+    echo "⛔ Invalid ParametricEQ: $file"
     break
   fi
 
